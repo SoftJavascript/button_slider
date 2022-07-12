@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  margin: 0px;
+  overflow: hidden;
+  background-color: black;
+  color: aliceblue;
+}
+
+
+
+.toggle-container {
+ display: flex;
+ align-items: center;
+ width: 200px;
+ margin: 10px auto;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  width: 80px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgb(93, 93, 93);
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px 0;
+  position: relative;
+}
+
+.toggle:checked + .label {
+  background-color: rgb(30, 228, 30);
+}
+
+.ball {
+  background-color: rgb(255, 255, 255);
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  margin-top: 3px;
+  margin-left: 3px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  
+  animation: slideOff 0.2s linear forwards;
+}
+
+.toggle:checked + .label .ball {
+  animation: slideOn 0.4s linear forwards;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 15px 40px rgba(0, 0, 0, 0.1);
+ } 
+
+.toggle:checked + .label {
+box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2), 0 1px 3px 1px rgba(255, 255, 255, 0.2);
+} 
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);
+  } 50% {
+    transform: translateX(20px) scale(1);
+  } 100% {
+    transform: translateX(40px) scale(1)
+  }
+} 
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1)
+  } 50% {
+    transform: translateX(20px) scale(1);
+  } 100% {
+    transform: translateX(0) scale(1);
+  }
+} 
